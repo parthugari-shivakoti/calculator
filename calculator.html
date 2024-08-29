@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js">
+        function result(){
+            let x = document.querySelector('.result').value;
+            if(x == ''){
+                console.log("helo!");
+            }
+            return eval(x);
+        }
+    </script>
+</head>
+<body>
+    <div class="heading">
+        <h1>CALCULATOR</h1>
+    </div>
+    <div class="container">
+            <div class="calculator">
+                <form name="form1">
+                <div id="display">
+                    <input id="result" type="text" name="result">
+                </div>
+                </form>
+                <div id="buttons">
+                    <input name="input" type="button" value=" 1 " id="bt" onclick="result.value+=1">
+                    <input name="input" type="button" value=" 2 " id="bt" onclick="result.value+=2">
+                    <input name="input" type="button" value=" 3 " id="bt" onclick="result.value+=3">
+                    <input class="result" name="input" type="button" value=" = " id="bt" onclick="result.value=eval(result.value)">
+                    <input name="input" type="button" value="AC " id="bt" onclick="result.value=' '">
+                </div> 
+                <div id="buttons">
+                    <input name="input" type="button" value=" 4 " id="bt" onclick="result.value+=4">
+                    <input name="input" type="button" value=" 5 " id="bt" onclick="result.value+=5">
+                    <input name="input" type="button" value=" 6 " id="bt" onclick="result.value+=6">
+                    <input name="input" type="button" value=" / " id="bt" onclick="result.value+='/'">
+                    <input name="input" type="button" value=" C " id="bt" onclick="result.value=''">
+                </div> 
+                <div id="buttons">
+                    <input name="input" type="button" value=" 7 " id="bt" onclick="result.value+= 7">
+                    <input name="input" type="button" value=" 8 " id="bt" onclick="result.value+=8">
+                    <input name="input" type="button" value=" 9 " id="bt" onclick="result.value+=9">
+                    <input name="input" type="button" value=" % " id="bt" onclick="result.value+='%'">
+                    <input name="input" type="button" value=" & " id="bt" onclick="result.value+='&'">
+                </div>
+                <div id="buttons">
+                    <input name="input" type="button" value=" + " id="bt" onclick="result.value+='+' ">
+                    <input name="input" type="button" value=" - " id="bt" onclick="result.value+='-' ">
+                    <input name="input" type="button" value=" 0 " id="bt" onclick="result.value+=0">
+                    <input name="input" type="button" value=" * " id="bt" onclick="result.value+='*'">
+                    <input name="input" type="button" value="PI" id="bt"  onclick="result.value+=3.14">
+                </div> 
+                <div id="buttons">
+                    <input name="input" type="button" value=" ( " id="bt" onclick="result.value+='('">
+                    <input name="input" type="button" value=" ) " id="bt" onclick="result.value+=')'">
+                    <input name="input" type="button" value=" ^ " id="bt" onclick="result.value+='**' ">
+                    <input name="input" type="button" value=" . " id="bt" onclick="result.value+='.' ">
+                    <input name="input" type="button" value="00" id="bt"  onclick="result.value+='00' ">
+                </div>
+            </div>
+    </div>
+</body>
+</html>

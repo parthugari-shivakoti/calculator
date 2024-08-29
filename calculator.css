@@ -1,0 +1,42 @@
+
+#result{
+    width: 245px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-style: oblique;
+    border-radius: 10px;
+    background-color: bisque;
+    color: black;
+    overflow-x: auto;
+}
+#buttons{
+    margin: 6px 0px;
+}
+input{
+    color: rgb(247, 249, 248);
+    border: 5px outset rgb(60, 59, 59);
+}
+.container{
+    background-color: rgb(38, 38, 36);
+    width: 260px;
+    border-radius: 10px;
+}
+#bt{
+    background-color: black;
+    border-radius: 10px;
+    width: 48px;
+}
+#bt:hover{
+    size: 20px;
+    color: yellow;
+}
+#bt:active{
+    box-sizing: 30px;
+    background-color: rgb(42, 174, 148);
+}
+#image{
+    width: 400px;
+    height: auto;
+}
