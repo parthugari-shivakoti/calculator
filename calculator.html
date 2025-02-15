@@ -3,56 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="calculator.css">
 </head>
 <body>
     <div class="heading">
-        <h1>CALCULATOR</h1>
+        <h1>Hacker Calculator</h1>
     </div>
     <div class="container">
-            <div class="calculator">
-                <form name="form1">
+        <div class="calculator">
+            <form name="form1">
                 <div id="display">
-                    <input id="result" type="text" name="result">
+                    <input id="result" type="text" name="result" readonly>
                 </div>
-                </form>
-                <div id="buttons">
-                    <input name="input" type="button" value=" 1 " id="bt" onclick="result.value+=1">
-                    <input name="input" type="button" value=" 2 " id="bt" onclick="result.value+=2">
-                    <input name="input" type="button" value=" 3 " id="bt" onclick="result.value+=3">
-                    <input class="result" name="input" type="button" value=" = " id="bt" onclick="result.value=eval(result.value)">
-                    <input name="input" type="button" value="AC " id="bt" onclick="result.value=' '">
-                </div> 
-                <div id="buttons">
-                    <input name="input" type="button" value=" 4 " id="bt" onclick="result.value+=4">
-                    <input name="input" type="button" value=" 5 " id="bt" onclick="result.value+=5">
-                    <input name="input" type="button" value=" 6 " id="bt" onclick="result.value+=6">
-                    <input name="input" type="button" value=" / " id="bt" onclick="result.value+='/'">
-                    <input name="input" type="button" value=" C " id="bt" onclick="result.value=''">
-                </div> 
-                <div id="buttons">
-                    <input name="input" type="button" value=" 7 " id="bt" onclick="result.value+= 7">
-                    <input name="input" type="button" value=" 8 " id="bt" onclick="result.value+=8">
-                    <input name="input" type="button" value=" 9 " id="bt" onclick="result.value+=9">
-                    <input name="input" type="button" value=" % " id="bt" onclick="result.value+='%'">
-                    <input name="input" type="button" value=" & " id="bt" onclick="result.value+='&'">
-                </div>
-                <div id="buttons">
-                    <input name="input" type="button" value=" + " id="bt" onclick="result.value+='+' ">
-                    <input name="input" type="button" value=" - " id="bt" onclick="result.value+='-' ">
-                    <input name="input" type="button" value=" 0 " id="bt" onclick="result.value+=0">
-                    <input name="input" type="button" value=" * " id="bt" onclick="result.value+='*'">
-                    <input name="input" type="button" value="PI" id="bt"  onclick="result.value+=3.14">
-                </div> 
-                <div id="buttons">
-                    <input name="input" type="button" value=" ( " id="bt" onclick="result.value+='('">
-                    <input name="input" type="button" value=" ) " id="bt" onclick="result.value+=')'">
-                    <input name="input" type="button" value=" ^ " id="bt" onclick="result.value+='**' ">
-                    <input name="input" type="button" value=" . " id="bt" onclick="result.value+='.' ">
-                    <input name="input" type="button" value="00" id="bt"  onclick="result.value+='00' ">
-                </div>
-            </div>
+            </form>
+            <div id="buttons">
+                <input name="input" type="button" value=" 1 " id="bt" onclick="appendToResult(1)">
+                <input name="input" type="button" value=" 2 " id="bt" onclick="appendToResult(2)">
+                <input name="input" type="button" value=" 3 " id="bt" onclick="appendToResult(3)">
+                <input name="input" type="button" value=" 4 " id="bt" onclick="appendToResult(4)">
+                <input name="input" type="button" value=" 5 " id="bt" onclick="appendToResult(5)">
+                <input name="input" type="button" value=" 6 " id="bt" onclick="appendToResult(6)">
+                <input name="input" type="button" value=" 7 " id="bt" onclick="appendToResult(7)">
+                <input name="input" type="button" value=" 8 " id="bt" onclick="appendToResult(8)">
+                <input name="input" type="button" value=" 9 " id="bt" onclick="appendToResult(9)">
+                <input name="input" type="button" value=" 0 " id="bt" onclick="appendToResult(0)">
+                <input name="input" type="button" value=" + " id="bt" onclick="appendToResult('+')">
+                <input name="input" type="button" value=" - " id="bt" onclick="appendToResult('-')">
+                <input name="input" type="button" value=" * " id="bt" onclick="appendToResult('*')">
+                <input name="input" type="button" value=" / " id="bt" onclick="appendToResult('/')">
+                <input name="input" type="button" value=" = " id="bt" onclick="calculateResult()">
+                <input name="input" type="button" value=" AC " id="bt" onclick="clearAll()">
+                <input name="input" type="button" value=" C " id="bt" onclick="clearLast()">
+                <input name="input" type="button" value=" ( " id="bt" onclick="appendToResult('(')">
+                <input name="input" type="button" value=" ) " id="bt" onclick="appendToResult(')')">
+                <input name="input" type="button" value=" % " id="bt" onclick="appendToResult('%')">
+                <input name="input" type="button" value=" √ " id="bt" onclick="calculateSquareRoot()">
+                <input name="input" type="button" value=" π " id="bt" onclick="appendToResult(Math.PI)">
+                <input name="input" type="button" value=" exp " id="bt" onclick="appendToResult('**')">
+                <input name="input" type="button" value=" ln " id="bt" onclick="calculateLog()">
+                <input name="input" type="button" value=" M+ " id="bt" onclick="memoryAdd()">
+                <input name="input" type="button" value=" MR " id="bt" onclick="memoryRecall()">
+                <input name="input" type="button" value=" MC " id="bt" onclick="memoryClear()">
+                <input name="input" type="button" value=" x² " id="bt" onclick="calculateSquare()">
+                <input name="input" type="button" value=" 1/x " id="bt" onclick="calculateReciprocal()">
+                <input name="input" type="button" value=" x! " id="bt" onclick="calculateFactorial()">
+            </div>            
+        </div>
     </div>
+    <script src="calculator.js"></script>
 </body>
 </html>
